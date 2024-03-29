@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Management</title>
+    <style>
+        /* CSS styles for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .subscription {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        .subscription h2 {
+            margin-top: 0;
+        }
+        .subscription p {
+            margin-bottom: 10px;
+        }
+        .btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #b30018;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Subscription Management</h1>
+        <div class="subscription">
+            <h2>Basic Plan</h2>
+            <p>Rs.129/month</p>
+            <button class="btn subscribe-btn">Subscribe</button>
+        </div>
+        <div class="subscription">
+            <h2>Premium Plan</h2>
+            <p>Rs.879/month</p>
+            <button class="btn subscribe-btn">Subscribe</button>
+        </div>
+        <div class="subscription">
+            <h2>Enterprise Plan</h2>
+            <p>Contact us for pricing</p>
+            <button class="btn subscribe-btn">Contact</button>
+        </div>
+        <div id="billing-info" style="display: none;">
+            <h2>Billing Information</h2>
+            <p>Card: **** **** **** 1234</p>
+            <p>Next billing date: January 23, 2025</p>
+            <button class="btn cancel-btn">Cancel Subscription</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for subscription management
+        document.querySelectorAll('.subscribe-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Show billing information
+                document.getElementById('billing-info').style.display = 'block';
+            });
+        });
+
+        document.querySelector('.cancel-btn').addEventListener('click', () => {
+            // Hide billing information
+            document.getElementById('billing-info').style.display = 'none';
+            // Perform cancellation logic (e.g., send request to backend)
+            alert('Subscription cancelled successfully.');
+        });
+    </script>
+</body>
+</html>
